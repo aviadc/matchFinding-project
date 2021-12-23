@@ -59,6 +59,13 @@ class App extends React.Component{
     this.displayValue();
   }
 
+  reset =()=>{
+    this.setState({ rightCounter: 0,
+      wrongCounter: 0})
+      this.displayKey();
+      this.displayValue();
+  }
+
 
   render(){
     return (
@@ -66,7 +73,9 @@ class App extends React.Component{
       <div className="container">
         <div className="game-board">
           <div className="right-wrong">
-       <span>right: {this.state.rightCounter}</span>  <span>wrong: {this.state.wrongCounter}</span>
+       <span>right: {this.state.rightCounter}</span> 
+       <button onClick={this.reset}>RESET</button>
+        <span>wrong: {this.state.wrongCounter}</span>
           </div>
         <div className="value"><img alt="dice" src={this.state.currentValue}/></div>
         <div className="key">{this.state.currentKey}</div>
