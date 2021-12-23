@@ -49,10 +49,8 @@ class App extends React.Component{
 
   isMatch = (key,value,bool)=>{
     if((this.state.data[key]===value)===bool){
-      console.log("alright");
       this.setState({ rightCounter: this.state.rightCounter+1})
     }else{
-      console.log("wrong");
       this.setState({ wrongCounter: this.state.wrongCounter+1})
     }
     this.displayKey();
